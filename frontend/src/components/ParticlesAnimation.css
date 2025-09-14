@@ -78,6 +78,7 @@
   /* Performance optimizations */
   will-change: transform;
   transform: translateZ(0);
+  text-align: center;
 }
 
 /* Subtitle text styling */
