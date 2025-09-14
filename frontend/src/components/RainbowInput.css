@@ -28,6 +28,34 @@
     z-index: 2; /* Keeps input field interactive */
 }
 
+/* Responsive input sizing */
+@media (max-width: 768px) {
+    .rainbow-input {
+        width: 200px;
+        font-size: 0.9rem;
+        padding: 10px 18px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .rainbow-input {
+        width: 180px;
+        font-size: 0.8rem;
+        padding: 8px 16px;
+        height: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .rainbow-input {
+        width: 160px;
+        font-size: 0.7rem;
+        padding: 6px 14px;
+        height: 16px;
+    }
+}
+
 /* Elegant Rainbow Border */
 .rainbow-border {
     position: absolute;

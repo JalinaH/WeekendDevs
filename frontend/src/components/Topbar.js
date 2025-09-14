@@ -16,11 +16,22 @@ export default function Topbar() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2, fontSize: '1.5rem' }}
+            sx={{ 
+              mr: 2, 
+              fontSize: { xs: '1.2rem', sm: '1.5rem' }
+            }}
           >
-            <MenuIcon sx={{ fontSize: '1.5rem' }} />
+            <MenuIcon sx={{ fontSize: { xs: '1.2rem', sm: '1.5rem' } }} />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontSize: '1.5rem', fontWeight: 700 }}>
+          <Typography 
+            variant="h6" 
+            component="div" 
+            sx={{ 
+              flexGrow: 1, 
+              fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' }, 
+              fontWeight: 700 
+            }}
+          >
             WeekendDevs
           </Typography>
         </Toolbar>

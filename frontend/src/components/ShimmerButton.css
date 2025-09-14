@@ -12,6 +12,31 @@
     border-radius: 50px;
     text-transform: uppercase;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+/* Responsive button sizing */
+@media (max-width: 768px) {
+    .shimmer-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .shimmer-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .shimmer-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
 }
 
 /* Hover Effect */
