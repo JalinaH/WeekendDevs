@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #fff;
   font-family: "Comic Sans MS", sans-serif; /* Fun cartoon style */
@@ -22,21 +22,21 @@
 /* Responsive typography and spacing */
 @media (max-width: 1200px) {
   .animation-container {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     min-height: 180px;
   }
 }
 
 @media (max-width: 992px) {
   .animation-container {
-    font-size: 2rem;
+    font-size: 3rem;
     min-height: 160px;
   }
 }
 
 @media (max-width: 768px) {
   .animation-container {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     min-height: 120px;
     padding: 0 15px;
   }
@@ -44,7 +44,7 @@
 
 @media (max-width: 576px) {
   .animation-container {
-    font-size: 1.2rem;
+    font-size: 2rem;
     min-height: 100px;
     padding: 0 10px;
   }
@@ -52,7 +52,7 @@
 
 @media (max-width: 400px) {
   .animation-container {
-    font-size: 1rem;
+    font-size: 1.5rem;
     min-height: 80px;
   }
 }
@@ -83,7 +83,7 @@
 /* Subtitle text styling */
 .subtitle-text {
   font-family: "Comic Sans MS", sans-serif;
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 1000;
   color: white;
 }
@@ -110,19 +110,19 @@
 /* Responsive subtitle text */
 @media (max-width: 768px) {
   .subtitle-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .subtitle-text {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 400px) {
   .subtitle-text {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
