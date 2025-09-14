@@ -19,15 +19,18 @@ const ParticlesAnimation = () => {
       <div style={{ 
         height: '100vh', 
         minHeight: '100dvh', /* Dynamic viewport height for mobile */
+        width: '100%',
         display: 'flex', 
         flexDirection: 'column', 
         justifyContent: 'center', 
         alignContent: 'center', 
         alignItems: 'center',
         padding: '20px 0',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
+        overflow: 'hidden',
+        position: 'relative'
       }}>
-        <div style={{ paddingTop: '4%', width: '100%' }} className="animation-container">
+        <div style={{ paddingTop: '4%', width: '100%', maxWidth: '100vw', overflow: 'hidden' }} className="animation-container">
           <div className={`crown ${startAnimation ? "crown-move-with-p" : ""} ${crownJumpAnimation ? "crown-jump-to-a" : ""}`}>👑</div>
           <span className={`letter p ${startAnimation ? "pushed-and-died" : ""}`}>P</span>
           <span className={`word ${startAnimation ? "bounce-push" : ""}`}>
@@ -50,7 +53,10 @@ const ParticlesAnimation = () => {
           flexWrap: 'wrap', 
           justifyContent: 'center', 
           gap: '15px',
-          alignItems: 'center'
+          alignItems: 'center',
+          width: '100%',
+          maxWidth: '100vw',
+          overflow: 'hidden'
         }}>
           <div className={`input-container ${isActive ? "active" : ""}`}>
             <input
