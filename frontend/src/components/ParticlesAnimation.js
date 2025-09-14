@@ -5,60 +5,27 @@ import './RainbowInput.css'
 
 const ParticlesAnimation = () => {
   const [startAnimation, setStartAnimation] = useState(false);
-  const [crownJumpAnimation, setCrownJumpAnimation] = useState(false);
   const [isActive, setIsActive] = useState(false);
+
 
   useEffect(() => {
     setTimeout(() => setStartAnimation(true), 1000); // Start animation after 1 second
-    setTimeout(() => setCrownJumpAnimation(true), 3500); // Crown jumps to A after P animation
   }, []);
 
   return (
     <>
       {/* <AuroraBackground /> */}
-      <div style={{ 
-        height: '100vh', 
-        minHeight: '100dvh', /* Dynamic viewport height for mobile */
-        width: '100%',
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'center', 
-        alignContent: 'center', 
-        alignItems: 'center',
-        padding: '20px 0',
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        position: 'relative'
-      }}>
-        <div style={{ paddingTop: '4%', width: '100%', maxWidth: '100vw', overflow: 'hidden' }} className="animation-container">
-          <div className={`crown ${startAnimation ? "crown-move-with-p" : ""} ${crownJumpAnimation ? "crown-jump-to-a" : ""}`}>👑</div>
+      <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
+        <div style={{ paddingTop: '4%', width: '100%' }} className="animation-container">
+          <div className={`crown ${startAnimation ? "crown-move-with-p" : ""}`}>👑</div>
           <span className={`letter p ${startAnimation ? "pushed-and-died" : ""}`}>P</span>
           <span className={`word ${startAnimation ? "bounce-push" : ""}`}>
             Articles By WeekendDevs
           </span>
         </div>
-        <div style={{ 
-          fontFamily: '"Comic Sans MS", sans-serif', 
-          fontSize: 'clamp(1rem, 3vw, 2rem)', 
-          fontWeight: '1000', 
-          color: 'white', 
-          textAlign: 'center', 
-          padding: '0 20px',
-          marginBottom: '20px'
-        }}>Small byte sized tech articles</div>
-        <div style={{
-          display:'flex', 
-          flexDirection: 'row', 
-          margin:'15px', 
-          flexWrap: 'wrap', 
-          justifyContent: 'center', 
-          gap: '15px',
-          alignItems: 'center',
-          width: '100%',
-          maxWidth: '100vw',
-          overflow: 'hidden'
-        }}>
-          <div className={`input-container ${isActive ? "active" : ""}`}>
+        <div className="subtitle-text">Small byte sized tech articles</div>
+        <div className="form-container">
+          <div style={{marginRight:'15px'}} className={`input-container ${isActive ? "active" : ""}`}>
             <input
               type="text"
               className="rainbow-input"

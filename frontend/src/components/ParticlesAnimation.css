@@ -80,6 +80,52 @@
   transform: translateZ(0);
 }
 
+/* Subtitle text styling */
+.subtitle-text {
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 2rem;
+  font-weight: 1000;
+  color: white;
+}
+
+/* Form container styling */
+.form-container {
+  display: flex;
+  margin: 15px;
+}
+
+/* Responsive form layout */
+@media (max-width: 576px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .form-container > div:first-child {
+    margin-right: 0 !important;
+  }
+}
+
+/* Responsive subtitle text */
+@media (max-width: 768px) {
+  .subtitle-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .subtitle-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .subtitle-text {
+    font-size: 1rem;
+  }
+}
+
 /* Crown starts on P */
 .crown {
   position: absolute;
