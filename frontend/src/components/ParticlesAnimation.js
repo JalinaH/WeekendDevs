@@ -23,8 +23,8 @@ const ParticlesAnimation = () => {
             Articles By WeekendDevs
           </span>
         </div>
-        <div style={{ fontFamily: '"Comic Sans MS", sans-serif', fontSize: '2rem', fontWeight: '1000', color: 'white' }}>Small byte sized tech articles</div>
-        <div style={{display:'flex', margin:'15px'}}>
+        <div className="subtitle-text">Small byte sized tech articles</div>
+        <div className="form-container">
           <div style={{marginRight:'15px'}} className={`input-container ${isActive ? "active" : ""}`}>
             <input
               type="text"

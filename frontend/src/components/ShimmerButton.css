@@ -35,3 +35,25 @@
 .shimmer-button:hover .shimmer {
     left: 100%;
 }
+
+/* Mobile responsive styles - keep desktop design intact */
+@media (max-width: 768px) {
+    .shimmer-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .shimmer-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .shimmer-button {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
