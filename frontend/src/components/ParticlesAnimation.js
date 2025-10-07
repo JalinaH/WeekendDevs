@@ -5,11 +5,15 @@ import './RainbowInput.css'
 
 const ParticlesAnimation = () => {
   const [startAnimation, setStartAnimation] = useState(false);
+  const [crownJumpToA, setCrownJumpToA] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
 
   useEffect(() => {
     setTimeout(() => setStartAnimation(true), 1000); // Start animation after 1 second
+    
+    // After the P falls and disappears (2s + 1s = 3s), make the crown jump to A
+    setTimeout(() => setCrownJumpToA(true), 4000);
   }, []);
 
   return (
@@ -17,7 +21,7 @@ const ParticlesAnimation = () => {
       {/* <AuroraBackground /> */}
       <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
         <div style={{ paddingTop: '4%', width: '100%' }} className="animation-container">
-          <div className={`crown ${startAnimation ? "crown-move-with-p" : ""}`}>👑</div>
+          <div className={`crown ${startAnimation ? "crown-move-with-p" : ""} ${crownJumpToA ? "crown-jump-to-a" : ""}`}>👑</div>
           <span className={`letter p ${startAnimation ? "pushed-and-died" : ""}`}>P</span>
           <span className={`word ${startAnimation ? "bounce-push" : ""}`}>
             Articles By WeekendDevs
