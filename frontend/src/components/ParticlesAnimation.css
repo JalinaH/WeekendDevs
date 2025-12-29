@@ -349,7 +349,7 @@
     0% {
       transform: translateX(0px) rotate(0deg);
     }
-    10% {
+    15% {
       transform: translateX(-10px) rotate(-8deg);
     }
     20% {
@@ -387,7 +387,7 @@
     0% {
       transform: translateX(0px) rotate(0deg);
     }
-    10% {
+    15% {
       transform: translateX(-8px) rotate(-6deg);
     }
     20% {
@@ -425,7 +425,7 @@
     0% {
       transform: translateX(0px) rotate(0deg);
     }
-    10% {
+    15% {
       transform: translateX(-7px) rotate(-5deg);
     }
     20% {
@@ -468,66 +468,118 @@
   }
 }
 
-/* Crown Falls with "P" Initially */
+/* Crown Falls with "P" Initially - follows P's wobble and fall */
 .crown-move-with-p {
   animation: crownFallWithP 2s ease-in-out forwards;
 }
 
-/* Crown Jumps to A after P falls */
+/* Crown Jumps to A after P falls and disappears */
 .crown-jump-to-a {
-  animation: crownBounceToA 1.5s ease-in-out 0.5s forwards;
+  animation: crownBounceToA 1.5s ease-in-out forwards;
 }
 
+/* Crown follows P's wobble and fall motion - matches pushWobbleFall keyframes */
 @keyframes crownFallWithP {
   0% {
     top: 49%;
-    left: 29%;
+    left: 23%;
     transform: translate(-50%, -100%) rotate(-15deg);
+  }
+  10% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-15px, 0) rotate(-25deg);
   }
   20% {
     top: 49%;
-    left: 25%;
-    transform: translate(-50%, -100%) rotate(-10deg);
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-30px, 0) rotate(-5deg);
+  }
+  30% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-50px, 0) rotate(-30deg);
+  }
+  40% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-80px, 0) rotate(0deg);
   }
   50% {
-    top: 52%;
-    left: 21%;
-    transform: translate(-50%, -100%) rotate(-5deg);
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-100px, 0) rotate(-35deg)
+      scale(1.1);
+  }
+  60% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-120px, 0) rotate(10deg);
+  }
+  70% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-130px, 0) rotate(-45deg)
+      scale(0.9);
+  }
+  80% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-140px, 10px) rotate(-25deg);
+  }
+  90% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-140px, 50px) rotate(-10deg);
   }
   100% {
     top: 49%;
-    left: 33%;
-    transform: translate(-50%, -100%) rotate(-5deg);
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
   }
 }
 
-/* Crown Bounces from "P" to "A" After "P" Falls */
+/* Crown Bounces from fallen position to "A" After "P" disappears */
 @keyframes crownBounceToA {
   0% {
     top: 49%;
-    left: 33%;
-    transform: translate(-50%, -100%) rotate(-5deg);
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
   }
-  20% {
-    top: 35%;
-    left: 31%;
-    transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
-  } /* Mid-air bounce */
-  50% {
-    top: 25%;
-    left: 29%;
-    transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
-  } /* Highest bounce */
-  70% {
-    top: 35%;
+  15% {
+    top: 49%;
+    left: 23%;
+    transform: translate(-50%, -100%) translate(-100px, 60px) rotate(5deg);
+  }
+  30% {
+    top: 49%;
     left: 27%;
-    transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
-  } /* Coming down */
+    transform: translate(-50%, -100%) translate(-30px, -40px) rotate(15deg)
+      scale(1.1);
+  }
+  50% {
+    top: 49%;
+    left: 27%;
+    transform: translate(-50%, -100%) translate(0px, -60px) rotate(10deg)
+      scale(1.2);
+  }
+  70% {
+    top: 49%;
+    left: 27%;
+    transform: translate(-50%, -100%) translate(0px, -20px) rotate(5deg)
+      scale(1.1);
+  }
+  85% {
+    top: 49%;
+    left: 27%;
+    transform: translate(-50%, -100%) translate(0px, -5px) rotate(-3deg)
+      scale(1.05);
+  }
   100% {
     top: 49%;
     left: 27%;
     transform: translate(-50%, -100%) rotate(0deg) scale(1);
-  } /* Lands on "A" */
+  }
 }
 
 /* Responsive crown animations */
@@ -535,46 +587,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 25%;
+      left: 18%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-15px, 0) rotate(-25deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-30px, 0) rotate(-5deg);
+    }
+    30% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-50px, 0) rotate(-30deg);
+    }
+    40% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-80px, 0) rotate(0deg);
     }
     50% {
-      top: 50%;
+      top: 48%;
       left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      transform: translate(-50%, -100%) translate(-100px, 0) rotate(-35deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-120px, 0) rotate(10deg);
+    }
+    70% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-130px, 0) rotate(-45deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-140px, 10px) rotate(-25deg);
+    }
+    90% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-140px, 50px) rotate(-10deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 31%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
     }
-    20% {
-      top: 30%;
-      left: 27%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-100px, 60px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(-30px, -40px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 25%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(0px, -60px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 23%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(0px, -20px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(0px, -5px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
@@ -588,46 +691,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 25%;
+      left: 15%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-15px, 0) rotate(-25deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-30px, 0) rotate(-5deg);
+    }
+    30% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-50px, 0) rotate(-30deg);
+    }
+    40% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-80px, 0) rotate(0deg);
     }
     50% {
-      top: 50%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-100px, 0) rotate(-35deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-120px, 0) rotate(10deg);
+    }
+    70% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-130px, 0) rotate(-45deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-140px, 10px) rotate(-25deg);
+    }
+    90% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-140px, 50px) rotate(-10deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
     }
-    20% {
-      top: 30%;
-      left: 26%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-100px, 60px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 21%;
+      transform: translate(-50%, -100%) translate(-30px, -40px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 24%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 21%;
+      transform: translate(-50%, -100%) translate(0px, -60px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 21%;
+      transform: translate(-50%, -100%) translate(0px, -20px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 21%;
+      transform: translate(-50%, -100%) translate(0px, -5px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
@@ -641,46 +795,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 25%;
+      left: 17%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-15px, 0) rotate(-25deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-30px, 0) rotate(-5deg);
+    }
+    30% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-50px, 0) rotate(-30deg);
+    }
+    40% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-80px, 0) rotate(0deg);
     }
     50% {
-      top: 50%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-100px, 0) rotate(-35deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-120px, 0) rotate(10deg);
+    }
+    70% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-130px, 0) rotate(-45deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-140px, 10px) rotate(-25deg);
+    }
+    90% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-140px, 50px) rotate(-10deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 27%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-140px, 120px) rotate(-5deg);
     }
-    20% {
-      top: 30%;
-      left: 23%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-100px, 60px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-30px, -40px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 21%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(0px, -60px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 19%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(0px, -20px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(0px, -5px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
@@ -694,46 +899,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 26%;
+      left: 17%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-10px, 0) rotate(-23deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-20px, 0) rotate(-7deg);
+    }
+    30% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-35px, 0) rotate(-27deg);
+    }
+    40% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-55px, 0) rotate(-3deg);
     }
     50% {
-      top: 50%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-70px, 0) rotate(-30deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-85px, 0) rotate(5deg);
+    }
+    70% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-95px, 0) rotate(-40deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-105px, 8px) rotate(-23deg);
+    }
+    90% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-105px, 35px) rotate(-12deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-105px, 80px) rotate(-7deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 31%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-105px, 80px) rotate(-7deg);
     }
-    20% {
-      top: 30%;
-      left: 27%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-70px, 40px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(-20px, -30px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 25%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(0px, -50px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 23%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(0px, -15px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 22%;
+      transform: translate(-50%, -100%) translate(0px, -3px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
@@ -747,46 +1003,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 47%;
-      left: 19%;
+      left: 12%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-8px, 0) rotate(-21deg);
     }
     20% {
       top: 47%;
-      left: 16%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-15px, 0) rotate(-9deg);
+    }
+    30% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-25px, 0) rotate(-25deg);
+    }
+    40% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-40px, 0) rotate(-5deg);
     }
     50% {
-      top: 49%;
-      left: 13%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-50px, 0) rotate(-27deg)
+        scale(1.1);
+    }
+    60% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-60px, 0) rotate(0deg);
+    }
+    70% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-70px, 0) rotate(-35deg)
+        scale(0.9);
+    }
+    80% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 6px) rotate(-21deg);
+    }
+    90% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 25px) rotate(-13deg);
     }
     100% {
       top: 47%;
-      left: 25%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 60px) rotate(-9deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 47%;
-      left: 28%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 60px) rotate(-9deg);
     }
-    20% {
-      top: 30%;
-      left: 27%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 47%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-50px, 30px) rotate(5deg);
+    }
+    30% {
+      top: 47%;
+      left: 23%;
+      transform: translate(-50%, -100%) translate(-15px, -25px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 25%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 47%;
+      left: 23%;
+      transform: translate(-50%, -100%) translate(0px, -40px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
+      top: 47%;
       left: 23%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      transform: translate(-50%, -100%) translate(0px, -12px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 47%;
+      left: 23%;
+      transform: translate(-50%, -100%) translate(0px, -3px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 47%;
@@ -800,46 +1107,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 25%;
+      left: 12%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-8px, 0) rotate(-21deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-15px, 0) rotate(-9deg);
+    }
+    30% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-25px, 0) rotate(-25deg);
+    }
+    40% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-40px, 0) rotate(-5deg);
     }
     50% {
-      top: 50%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-50px, 0) rotate(-27deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-60px, 0) rotate(0deg);
+    }
+    70% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-70px, 0) rotate(-35deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 6px) rotate(-21deg);
+    }
+    90% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 25px) rotate(-13deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 60px) rotate(-9deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 27%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-75px, 60px) rotate(-9deg);
     }
-    20% {
-      top: 30%;
-      left: 23%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 12%;
+      transform: translate(-50%, -100%) translate(-50px, 30px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(-15px, -25px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 21%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(0px, -40px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 19%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(0px, -12px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 18%;
+      transform: translate(-50%, -100%) translate(0px, -3px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
@@ -853,46 +1211,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 47%;
-      left: 22%;
+      left: 7%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-7px, 0) rotate(-20deg);
     }
     20% {
       top: 47%;
-      left: 19%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-13px, 0) rotate(-10deg);
+    }
+    30% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-22px, 0) rotate(-24deg);
+    }
+    40% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-35px, 0) rotate(-6deg);
     }
     50% {
-      top: 49%;
-      left: 15%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-45px, 0) rotate(-26deg)
+        scale(1.1);
+    }
+    60% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-55px, 0) rotate(-2deg);
+    }
+    70% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-65px, 0) rotate(-33deg)
+        scale(0.9);
+    }
+    80% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 5px) rotate(-20deg);
+    }
+    90% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 22px) rotate(-13deg);
     }
     100% {
       top: 47%;
-      left: 27%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 55px) rotate(-10deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 47%;
-      left: 26%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 55px) rotate(-10deg);
     }
-    20% {
-      top: 32%;
-      left: 20%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 47%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-45px, 28px) rotate(5deg);
+    }
+    30% {
+      top: 47%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(-12px, -22px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 22%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 47%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(0px, -35px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 32%;
-      left: 16%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 47%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(0px, -10px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 47%;
+      left: 15%;
+      transform: translate(-50%, -100%) translate(0px, -2px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 47%;
@@ -906,46 +1315,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 25%;
+      left: 7%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-7px, 0) rotate(-20deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-13px, 0) rotate(-10deg);
+    }
+    30% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-22px, 0) rotate(-24deg);
+    }
+    40% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-35px, 0) rotate(-6deg);
     }
     50% {
-      top: 50%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-45px, 0) rotate(-26deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-55px, 0) rotate(-2deg);
+    }
+    70% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-65px, 0) rotate(-33deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 5px) rotate(-20deg);
+    }
+    90% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 22px) rotate(-13deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 55px) rotate(-10deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 23%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-70px, 55px) rotate(-10deg);
     }
-    20% {
-      top: 30%;
-      left: 19%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 7%;
+      transform: translate(-50%, -100%) translate(-45px, 28px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 14%;
+      transform: translate(-50%, -100%) translate(-12px, -22px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 17%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 14%;
+      transform: translate(-50%, -100%) translate(0px, -35px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 15%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 14%;
+      transform: translate(-50%, -100%) translate(0px, -10px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 14%;
+      transform: translate(-50%, -100%) translate(0px, -2px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
@@ -959,46 +1419,97 @@
   @keyframes crownFallWithP {
     0% {
       top: 48%;
-      left: 25%;
+      left: 9%;
       transform: translate(-50%, -100%) rotate(-15deg);
+    }
+    15% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-7px, 0) rotate(-20deg);
     }
     20% {
       top: 48%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(-10deg);
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-13px, 0) rotate(-10deg);
+    }
+    30% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-22px, 0) rotate(-24deg);
+    }
+    40% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-35px, 0) rotate(-6deg);
     }
     50% {
-      top: 50%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-45px, 0) rotate(-26deg)
+        scale(1.1);
+    }
+    60% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-55px, 0) rotate(-2deg);
+    }
+    70% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-65px, 0) rotate(-33deg)
+        scale(0.9);
+    }
+    80% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-70px, 5px) rotate(-20deg);
+    }
+    90% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-70px, 22px) rotate(-13deg);
     }
     100% {
       top: 48%;
-      left: 30%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-70px, 55px) rotate(-10deg);
     }
   }
 
   @keyframes crownBounceToA {
     0% {
       top: 48%;
-      left: 26%;
-      transform: translate(-50%, -100%) rotate(-5deg);
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-70px, 55px) rotate(-10deg);
     }
-    20% {
-      top: 30%;
-      left: 22%;
-      transform: translate(-50%, -100%) rotate(0deg) scale(1.1);
+    15% {
+      top: 48%;
+      left: 9%;
+      transform: translate(-50%, -100%) translate(-45px, 28px) rotate(5deg);
+    }
+    30% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(-12px, -22px) rotate(15deg)
+        scale(1.1);
     }
     50% {
-      top: 20%;
-      left: 20%;
-      transform: translate(-50%, -100%) rotate(10deg) scale(1.2);
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(0px, -35px) rotate(10deg)
+        scale(1.2);
     }
     70% {
-      top: 30%;
-      left: 18%;
-      transform: translate(-50%, -100%) rotate(5deg) scale(1.1);
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(0px, -10px) rotate(5deg)
+        scale(1.1);
+    }
+    85% {
+      top: 48%;
+      left: 17%;
+      transform: translate(-50%, -100%) translate(0px, -2px) rotate(-3deg)
+        scale(1.05);
     }
     100% {
       top: 48%;
